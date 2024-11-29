@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tabs</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="js/detail.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Kiểu dáng cho tab */
+        .tab {
+            display: flex;
+            cursor: pointer;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .tab button {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .tab button.active {
+            border-bottom: 2px solid #007bff;
+            color: #007bff;
+        }
+
+        /* Kiểu dáng cho nội dung tab */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="restaurantDetail">
+        <!-- <p>title</p>
+        <img src="http://localhost:8080/restaurant/file/gem.png" alt="">
+        <p>rating</p> -->
+
+    </div>
+    <div id="tabList" class="tab">
+        <!-- <button class="tablink active" onclick="openTab(event, 'tab1')">Tab 1</button>
+        <button class="tablink" onclick="openTab(event, 'tab2')">Tab 2</button>
+        <button class="tablink" onclick="openTab(event, 'tab3')">Tab 3</button> -->
+    </div>
+    <div id="tabContainer">
+        <!-- <div id="tab1" class="tab-content active">
+            <h3>Content for Tab 1</h3>
+            <p>This is the content for Tab 1.</p>
+        </div>
+
+        <div id="tab2" class="tab-content">
+            <h3>Content for Tab 2</h3>
+            <p>This is the content for Tab 2.</p>
+        </div>
+
+        <div id="tab3" class="tab-content">
+            <h3>Content for Tab 3</h3>
+            <p>This is the content for Tab 3.</p>
+        </div> -->
+    </div>
+    <script>
+        function openTab(event, tabId) {
+            // Xóa class 'active' khỏi tất cả các nút và nội dung
+            const tabs = document.querySelectorAll(".tablink");
+            const contents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach(tab => tab.classList.remove("active"));
+            contents.forEach(content => content.classList.remove("active"));
+
+            // Kích hoạt tab được nhấn
+            event.currentTarget.classList.add("active");
+            document.getElementById(tabId).classList.add("active");
+        }
+    </script>
+</body>
+
+</html>
